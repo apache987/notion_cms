@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>notion cms test</title>
+        <link type="text/css" rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <%- include('header') %>
+        <main>
+            <div class="main-container">
+                <div class="left-side-container"></div>
+                <div class="main-contents">
+                    <h1 class="page-title"><%= data.title %></h1>
+                    <p>投稿日：<%= data.create_by %></p>
+                    <div class="contents"></div>
+                        <!-- テキストの配列をループで出力 -->
+                        <% data.texts.forEach(text => { %>
+                            <p><%= text %></p>
+                        <% }); %>
+                        
+                        <!-- 画像の出力 -->
+                        <% data.image.forEach(image => { %>
+                            <img src="<%= image %>" alt="コンテンツ画像">
+                        <% }); %>
+                    </div>
+                </div>
+                
+                <div class="right-side-container"></div>
+            </div>
+            
+        </main>
+        <%- include('footer') %>
+    </body>
+</html>

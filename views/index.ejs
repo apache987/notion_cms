@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>notion cms test</title>
+        <link type="text/css" rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <%- include('header') %>
+        <main>
+            <div class="main-container">
+                <div class="left-side-container"></div>
+                <div class="grid-container">
+                    <% page_list.forEach(function(page, index) { %>
+                        <form method="post" action="/page" id="form<%= index %>">
+                            <input type="hidden" name="page_id" value="<%= page.page_id %>">
+                            <input type="hidden" name="page_title" value="<%= page.page_title %>" >
+                            <div class="grid-item">
+                                <a href="javascript:document.getElementById('form<%= index %>').submit()">
+                                    <%= page.page_title %>
+                                </a>
+                            </div>
+                        </form>
+                    <% }); %>
+                </div>
+                <div class="right-side-container"></div>
+            </div>
+            
+        </main>
+        <%- include('footer') %>
+    </body>
+</html>

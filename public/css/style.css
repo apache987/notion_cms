@@ -1,0 +1,127 @@
+/* Header & Footer 共通スタイル */
+.header,
+.footer {
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+.header-inner,
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header 固有のスタイル */
+.header {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Navigation 共通スタイル */
+.nav-list,
+.footer-nav-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list a,
+.footer-nav-list a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover,
+.footer-nav-list a:hover {
+    color: #007bff;
+}
+
+/* Footer 固有のスタイル */
+.footer {
+    margin-top: auto;
+    border-top: 1px solid #eee;
+}
+
+.footer-inner {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.copyright {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .header-inner,
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .nav-list,
+    .footer-nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+main {
+    padding: 50px 100px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    width: 60%;
+}
+.mian-contents{
+    width: 60%;
+}
+.left-side-container{
+    width: 20%;
+}
+.right-side-container{
+    width: 20%;
+}
+.main-container{
+    display: flex;
+}
+.grid-item {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+.grid-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 2rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ddd;
+}
